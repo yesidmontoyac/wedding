@@ -53,8 +53,8 @@ function BackgroundVideo() {
         <div className="bg-video-iframe-clip">
           <iframe
             className="bg-video-iframe"
-            src={`https://drive.google.com/file/d/${driveId}/preview?rm=minimal`}
-            allow="autoplay"
+            src={`https://drive.google.com/file/d/${driveId}/preview?rm=minimal&autoplay=1&loop=1`}
+            allow="autoplay; fullscreen"
             title=""
           />
         </div>
