@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+*.local
+.DS_Store
+
+# Media assets (stored in Google Drive, not in the repo)
+public/assets/fotos/**
+!public/assets/fotos/.gitkeep
+public/assets/videos/**
+!public/assets/videos/.gitkeep
