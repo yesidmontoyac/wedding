@@ -45,33 +45,20 @@ function RotateHint() {
 }
 
 function BackgroundVideo() {
-  const driveId = import.meta.env.VITE_DRIVE_VIDEO1_ID as string | undefined;
-
   return (
     <div className="bg-video-wrapper" aria-hidden="true">
-      {driveId ? (
-        <div className="bg-video-iframe-clip">
-          <iframe
-            className="bg-video-iframe"
-            src={`https://drive.google.com/file/d/${driveId}/preview?rm=minimal&autoplay=1&loop=1`}
-            allow="autoplay; fullscreen"
-            title=""
-          />
-        </div>
-      ) : (
-        <video
-          className="bg-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          disablePictureInPicture
-          onContextMenu={(e) => e.preventDefault()}
-        >
-          <source src="./assets/videos/video1.mov" type="video/quicktime" />
-          <source src="./assets/videos/video1.mp4" type="video/mp4" />
-        </video>
-      )}
+      <video
+        className="bg-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        disablePictureInPicture
+        onContextMenu={(e) => e.preventDefault()}
+      >
+        <source src="./assets/videos/video1.mp4" type="video/mp4" />
+        <source src="./assets/videos/video1.mov" type="video/quicktime" />
+      </video>
       <div className="bg-overlay" />
     </div>
   );
