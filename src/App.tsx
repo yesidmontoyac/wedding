@@ -5,7 +5,6 @@ import WelcomePage from './components/WelcomePage';
 import MenuSelection from './components/MenuSelection';
 import ThankYouPage from './components/ThankYouPage';
 import LoadingSpinner from './components/LoadingSpinner';
-import { ASSETS } from './config/assets';
 
 function RotateHint() {
   const [isLandscape, setIsLandscape] = useState(false);
@@ -46,21 +45,33 @@ function RotateHint() {
 }
 
 function BackgroundVideo() {
+  const driveId = import.meta.env.VITE_DRIVE_VIDEO1_ID as string | undefined;
+
   return (
     <div className="bg-video-wrapper" aria-hidden="true">
-      <video
-        className="bg-video"
-        autoPlay
-        muted
-        loop
-        playsInline
-        disablePictureInPicture
-        onContextMenu={(e) => e.preventDefault()}
-      >
-        {ASSETS.videoDrive && <source src={ASSETS.videoDrive} type="video/mp4" />}
-        <source src="./assets/videos/video1.mov" type="video/quicktime" />
-        <source src="./assets/videos/video1.mp4" type="video/mp4" />
-      </video>
+      {driveId ? (
+        <div className="bg-video-iframe-clip">
+          <iframe
+            className="bg-video-iframe"
+            src={`https://drive.google.com/file/d/${driveId}/preview?rm=minimal`}
+            allow="autoplay"
+            title=""
+          />
+        </div>
+      ) : (
+        <video
+          className="bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          onContextMenu={(e) => e.preventDefault()}
+        >
+          <source src="./assets/videos/video1.mov" type="video/quicktime" />
+          <source src="./assets/videos/video1.mp4" type="video/mp4" />
+        </video>
+      )}
       <div className="bg-overlay" />
     </div>
   );
