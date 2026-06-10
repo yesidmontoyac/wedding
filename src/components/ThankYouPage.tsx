@@ -108,7 +108,7 @@ export default function ThankYouPage({ guest }: Props) {
                 <div className="ty-dress-card">
                   <p className="ty-dress-category">Mujeres</p>
                   <p className="ty-dress-style">{DRESS_CODE.women.style}</p>
-                  <p className="ty-dress-note">{DRESS_CODE.women.note}</p>
+                  <p className="ty-dress-note" style={{ whiteSpace: 'pre-line' }}>{DRESS_CODE.women.note}</p>
                 </div>
                 <div className="ty-dress-card">
                   <p className="ty-dress-category">Hombres</p>
@@ -122,7 +122,7 @@ export default function ThankYouPage({ guest }: Props) {
             <section className="ty-section">
               <h3 className="ty-section-title">Información adicional</h3>
               <div className="ty-info-box">
-                <p>{DRESS_CODE.additional}</p>
+                <p style={{ whiteSpace: 'pre-line' }}>{DRESS_CODE.additional}</p>
               </div>
             </section>
           </>

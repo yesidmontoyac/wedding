@@ -10,7 +10,7 @@ export const EVENT = {
 } as const;
 
 export const DRESS_CODE = {
-  women: { style: 'Formal', note: 'Evitar el color blanco.' },
+  women: { style: 'Formal', note: 'Agradecemos evitar prendas en tonos blanco, marfil, crema, blanco hueso y champagne claro.\n\nEl azul navy y azul marino estarán reservados para nuestras damas de honor.' },
   men:   { style: 'Formal', note: 'No es necesario corbata ni traje.' },
-  additional: 'Recuerda que la celebración y la ceremonia serán en la playa, para nosotros lo más importante es tu comodidad.',
+  additional: 'Recuerda que la celebración y la ceremonia serán en la playa, para nosotros lo más importante es tu comodidad.\n\nCualquier duda, comunícate con Camilla nuestra Wedding Planner al 311 6448339.',
 } as const;
